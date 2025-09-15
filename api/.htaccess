@@ -1,0 +1,10 @@
+RewriteEngine On
+# Kalau file/folder tidak ada, lempar ke index.php
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^ index.php [QSA,L]
+
+# (disarankan) JANGAN set CORS di sini agar tidak bertabrakan dengan header dari PHP
+# <IfModule mod_headers.c>
+#   Header always set ...
+# </IfModule>

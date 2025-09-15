@@ -1,0 +1,8 @@
+RewriteEngine On
+RewriteBase /layanan/
+
+# /layanan -> /layanan/index.php
+RewriteRule ^$ index.php [L,QSA]
+
+# /layanan/apa-saja -> /layanan/index.php
+RewriteRule ^.+$ index.php [L,QSA]
